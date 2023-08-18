@@ -24,10 +24,10 @@
                     <h2 class="card-title">Triangle!</h2>
                     <p>Area (A) = 0.5 X b X h</p>
                     <p>
-                        <input id="triangle-base" type="text" class="border bg-gray-200 text-xl w-24 px-2" placeholder="base">
+                        <input id="triangle-base" type="number" class="border bg-gray-200 text-xl w-24 px-2" placeholder="base">
                         <span class="ml-2 text-xl">cm</span>
 
-                        <input id="triangle-height" type="text" class="border bg-gray-200 text-xl w-24 px-2" placeholder="height">
+                        <input id="triangle-height" type="number" class="border bg-gray-200 text-xl w-24 px-2" placeholder="height">
                         <span class="ml-2 text-xl">cm</span>
                     </p>
                     <p class="text-2xl">
@@ -46,10 +46,10 @@
                     <h2 class="card-title">Rectangle!</h2>
                     <p>Area (A) = w X l</p>
                     <p>
-                        <input id="rectangle-width" type="text" class="border bg-gray-200 text-xl w-24 px-2" placeholder="width">
+                        <input id="rectangle-width" type="number" class="border bg-gray-200 text-xl w-24 px-2" placeholder="width">
                         <span class="ml-2 text-xl">cm</span>
 
-                        <input id="rectangle-length" type="text" class="border bg-gray-200 text-xl w-24 px-2" placeholder="length">
+                        <input id="rectangle-length" type="number" class="border bg-gray-200 text-xl w-24 px-2" placeholder="length">
                         <span class="ml-2 text-xl">cm</span>
                     </p>
                     <p class="text-2xl">
@@ -68,10 +68,10 @@
                     <h2 class="card-title">Parallelogram!</h2>
                     <p>Area (A) = b X h</p>
                     <p>
-                        <input id="parallelogram-base" type="text" class="border bg-gray-200 text-xl w-24 px-2" placeholder="base">
+                        <input id="parallelogram-base" type="number" class="border bg-gray-200 text-xl w-24 px-2" placeholder="base">
                         <span class="ml-2 text-xl">cm</span>
 
-                        <input id="parallelogram-height" type="text" class="border bg-gray-200 text-xl w-24 px-2" placeholder="height">
+                        <input id="parallelogram-height" type="number" class="border bg-gray-200 text-xl w-24 px-2" placeholder="height">
                         <span class="ml-2 text-xl">cm</span>
                     </p>
                     <p class="text-2xl">
@@ -90,10 +90,10 @@
                     <h2 class="card-title">Ellipse!</h2>
                     <p>Area (A) = π * a * b</p>
                     <p>
-                        <input id="ellipse-a" type="text" class="border bg-gray-200 text-xl w-24 px-2" placeholder="first radius">
+                        <input id="ellipse-a" type="number" class="border bg-gray-200 text-xl w-24 px-2" placeholder="first radius">
                         <span class="ml-2 text-xl">cm</span>
 
-                        <input id="ellipse-b" type="text" class="border bg-gray-200 text-xl w-24 px-2" placeholder="second radius">
+                        <input id="ellipse-b" type="number" class="border bg-gray-200 text-xl w-24 px-2" placeholder="second radius">
                         <span class="ml-2 text-xl">cm</span>
                     </p>
                     <p class="text-2xl">
@@ -109,7 +109,10 @@
 
         <!-- area container -->
         <div class="w-[300px]">
-            <h1>Area Calculator</h1>
+            <div class="text-3xl text-center">Area Calculator</div>
+            <div id="calculation-entry">
+
+            </div>
         </div>
 
     </div>

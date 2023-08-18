@@ -18,6 +18,8 @@ function calculateTriangleArea (){
     // show triangle area
     const triangleAreaSpan = document.getElementById('triangle-area');
     triangleAreaSpan.innerText = area;
+
+    addToCalculationEntry('Triangle', area);
 }
 
 function calculateRectangleArea (){
@@ -33,6 +35,12 @@ function calculateRectangleArea (){
     const length = parseFloat(lengthVAlueText);
     console.log(length);
 
+    // validate input
+    if(isNaN(width)|| isNaN(length)){
+        alert('Please enter a number.');
+        return;
+    }
+
     // calculate area
     const area = width * length;
     console.log(area);
@@ -40,6 +48,8 @@ function calculateRectangleArea (){
     // show rectangle area
     const rectangleAreaSpan = document.getElementById('rectangle-area');
     rectangleAreaSpan.innerText = area;
+
+    addToCalculationEntry('Rectangle', area);
 }
 
 
@@ -49,9 +59,16 @@ function calculateParallelogramArea(){
 
     const height = getInputValue('parallelogram-height');
 
+    if(isNaN(base)|| isNaN(height)){
+        alert('Please enter a number.');
+        return;
+    }
+
     // calculate area
-    const parallelogramAreaSpan = base * height;
+    const area = base * height;
     setElementInnerText('parallelogram-area', area);
+
+    addToCalculationEntry('Parallelogram', area);
 
 }
 
@@ -59,7 +76,10 @@ function calculateEllipseArea(){
     const aRadius = getInputValue ('ellipse-a');
     const bRadius = getInputValue ('ellipse-b');
     const area = 3.14 * aRadius * bRadius;
-    setElementInnerText('ellipse-area', area);
+    const areaTwoDecimal = area.toFixed(2);
+    setElementInnerText('ellipse-area', areaTwoDecimal);
+
+    addToCalculationEntry('Ellipse', areaTwoDecimal);
 }
 
 // reuseable get input field value
@@ -74,4 +94,16 @@ function getInputValue(fieldId){
 function setElementInnerText(elementId, area){
     const element = document.getElementById(elementId);
     element.innerText = area;
+}
+
+function addToCalculationEntry(areaType, area){
+    console.log(areaType+ ' ' +area);
+    const calculationEntry = document.getElementById('calculation-entry');
+    
+    const count = calculationEntry.childElementCount;
+    
+    const p = document.createElement('p');
+    p.classList.add('my-4');
+    p.innerHTML = `${count + 1} ${areaType} ${area} cm<sup>2</sup> <button class = "btn btn-sm btn-success">Convert</button>`;
+    calculationEntry.appendChild(p);
 }
